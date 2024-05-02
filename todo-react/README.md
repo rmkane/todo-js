@@ -1,5 +1,15 @@
 # React + TypeScript + Vite
 
+This is a todo list written in [React](https://react.dev/) that uses [Tailwind CSS](https://tailwindcss.com/docs/guides/vite).
+
+```sh
+pnpm install
+pnpm add -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+## Description
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
