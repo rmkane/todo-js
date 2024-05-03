@@ -11,3 +11,11 @@ html {
   background: var(--background-color);
   color: var(--text-color);
 }
+
+input,
+textarea {
+  background: var(--background-color);
+  color: var(--text-color);
+  border: thin solid var(--text-color);
+  padding: 0.25rem 0.5rem;
+}
