@@ -33,9 +33,10 @@ function TodoForm({ onSubmit }: TodoFormProps) {
   }
 
   return (
-    <form className="flex gap-4" onSubmit={handleSubmit}>
+    <form className="w-full flex flex-row gap-4" onSubmit={handleSubmit}>
       <input
         type="text"
+        className="flex flex-1"
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Add a new todo"
@@ -53,22 +54,28 @@ function TodoForm({ onSubmit }: TodoFormProps) {
 
 function Todo({ completed, id, onToggle, text }: TodoProps) {
   return (
-    <li className="flex items-center">
+    <li className="flex items-center border-2 border-orange-500 px-4 py-2 gap-4">
       <input
         type="checkbox"
         defaultChecked={completed}
         onClick={() => onToggle(id)}
       />
-      <span className="ml-2" data-item-id={id}>
+      <span className="flex flex-1" data-item-id={id}>
         {text}
       </span>
+      <button
+        type="button"
+        className="flex items-center justify-center px-2 py-1 bg-red-600 "
+      >
+        Delete
+      </button>
     </li>
   );
 }
 
 function TodoList({ todos, onToggle }: TodoListProps) {
   return (
-    <ul>
+    <ul className="flex flex-col w-full border-2 border-orange-500 p-2 gap-2">
       {todos.map((todo) => (
         <Todo
           key={todo.id}
